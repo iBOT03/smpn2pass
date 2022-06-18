@@ -48,23 +48,6 @@
                     <li><a class="nav-link scrollto active" href="<?= base_url('Berita') ?>">Berita</a></li>
                     <!-- <li><a class="nav-link scrollto" href="#team">PTK</a></li> -->
                     <li><a class="nav-link scrollto" href="<?= base_url('Ptk') ?>">PTK</a></li>
-                    <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="#">Drop Down 1</a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                            <ul>
-                                <li><a href="#">Deep Drop Down 1</a></li>
-                                <li><a href="#">Deep Drop Down 2</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Drop Down 2</a></li>
-                        <li><a href="#">Drop Down 3</a></li>
-                        <li><a href="#">Drop Down 4</a></li>
-                    </ul>
-                </li> -->
                     <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -103,7 +86,7 @@
                             <h4>App 1</h4>
                             <p>App</p>
                             <a href="<?= base_url('') ?>assets/user/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="<?= base_url('Berita/detail') ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
 
@@ -113,7 +96,7 @@
                             <h4>Web 3</h4>
                             <p>Web</p>
                             <a href="<?= base_url('') ?>assets/user/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="<?= base_url('Berita/detail') ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
 
@@ -123,7 +106,7 @@
                             <h4>App 2</h4>
                             <p>App</p>
                             <a href="<?= base_url('') ?>assets/user/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="<?= base_url('Berita/detail') ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
 
@@ -133,7 +116,7 @@
                             <h4>Card 2</h4>
                             <p>Card</p>
                             <a href="<?= base_url('') ?>assets/user/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="<?= base_url('Berita/detail') ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
 
@@ -143,7 +126,7 @@
                             <h4>Web 2</h4>
                             <p>Web</p>
                             <a href="<?= base_url('') ?>assets/user/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="<?= base_url('Berita/detail') ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
 
@@ -153,7 +136,7 @@
                             <h4>App 3</h4>
                             <p>App</p>
                             <a href="<?= base_url('') ?>assets/user/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="<?= base_url('Berita/detail') ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
 
@@ -163,7 +146,7 @@
                             <h4>Card 1</h4>
                             <p>Card</p>
                             <a href="<?= base_url('') ?>assets/user/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="<?= base_url('Berita/detail') ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
 
@@ -173,7 +156,7 @@
                             <h4>Card 3</h4>
                             <p>Card</p>
                             <a href="<?= base_url('') ?>assets/user/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="<?= base_url('Berita/detail') ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
 
@@ -183,7 +166,7 @@
                             <h4>Web 3</h4>
                             <p>Web</p>
                             <a href="<?= base_url('') ?>assets/user/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="<?= base_url('Berita/detail') ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
 

@@ -7,4 +7,9 @@ class Berita extends CI_Controller {
 	{
 		$this->load->view('berita');
 	}
+	
+	public function detail()
+	{
+		$this->load->view('berita-detail');
+	}
 }
