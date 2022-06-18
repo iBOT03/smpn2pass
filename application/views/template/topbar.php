@@ -22,8 +22,9 @@
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="#services">Service</a></li>
-                <li><a class="nav-link scrollto " href="#portfolio">Berita</a></li>
-                <li><a class="nav-link scrollto" href="#team">PTK</a></li>
+                <li><a class="nav-link scrollto" href="<?= base_url('Berita') ?>">Berita</a></li>
+                <!-- <li><a class="nav-link scrollto" href="#team">PTK</a></li> -->
+                <li><a class="nav-link scrollto" href="<?= base_url('Ptk') ?>">PTK</a></li>
                 <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="#">Drop Down 1</a></li>
