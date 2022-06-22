@@ -48,7 +48,7 @@
                     <li><a class="nav-link scrollto active" href="<?= base_url('Berita') ?>">Berita</a></li>
                     <!-- <li><a class="nav-link scrollto" href="#team">PTK</a></li> -->
                     <li><a class="nav-link scrollto" href="<?= base_url('Ptk') ?>">PTK</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url('') ?>#contact">Kontak</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -62,9 +62,9 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Portfolio</h2>
-                    <h3>Check our <span>Portfolio</span></h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+                    <h2>Berita</h2>
+                    <h3>Berita Seputar <span>SMPN 2 Passongsongan</span></h3>
+                    <!-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p> -->
                 </div>
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">

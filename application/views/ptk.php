@@ -45,10 +45,10 @@
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="<?= base_url('') ?>#services">Service</a></li>
-                    <li><a class="nav-link scrollto " href="<?= base_url('') ?>#portfolio">Berita</a></li>
+                    <li><a class="nav-link scrollto " href="<?= base_url('Berita') ?>">Berita</a></li>
                     <!-- <li><a class="nav-link scrollto" href="#team">PTK</a></li> -->
                     <li><a class="nav-link scrollto active" href="<?= base_url('Ptk') ?>">PTK</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url('') ?>#contact">Kontak</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
