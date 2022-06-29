@@ -27,6 +27,7 @@ class ProfilSekolah extends CI_Controller
 		}
 
 		$data['info'] = $this->ProfilModel->read();
+		$data['count'] = $this->ProfilModel->count();
 		$this->load->view('admin/profil-sekolah/profil-sekolah', $data);
 	}
 
@@ -123,7 +124,7 @@ class ProfilSekolah extends CI_Controller
 			$this->load->view('admin/profil-sekolah/edit', $data);
 		} else {
 			$update = $this->ProfilModel->update(array(
-				'id'			=> '',
+				'id'			=> $this->input->post('id'),
 				'nama'			=> $this->input->post('nama'),
 				'slogan'		=> $this->input->post('slogan'),
 				'email'			=> $this->input->post('email'),

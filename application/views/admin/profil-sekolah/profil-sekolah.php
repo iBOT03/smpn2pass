@@ -39,7 +39,11 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="<?= base_url('admin/ProfilSekolah/tambah') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>
+                            <?php if ($count == null) { ?>
+                                <a href="<?= base_url('admin/ProfilSekolah/tambah') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>
+                            <?php } else { ?>
+                                <button href="<?= base_url('admin/ProfilSekolah/tambah') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" disabled><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</button>
+                            <?php } ?>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

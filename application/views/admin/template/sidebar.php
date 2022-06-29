@@ -42,11 +42,11 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Civitas Admin & PTK :</h6>
-                <a class="collapse-item" href="buttons.html">Admin</a>
-                <a class="collapse-item" href="cards.html">PTK</a>
+                <a class="collapse-item <?= ($this->uri->segment(2) == 'Admin' ? 'active' : '') ?>" href="<?= base_url('admin/Admin') ?>">Admin</a>
+                <a class="collapse-item <?= ($this->uri->segment(2) == 'Ptk' ? 'active' : '') ?>" href="<?= base_url('admin/Ptk') ?>">PTK</a>
                 <h6 class="collapse-header">Civitas Siswa & Alumni :</h6>
                 <a class="collapse-item" href="buttons.html">Siswa</a>
-                <a class="collapse-item" href="cards.html">PTK</a>
+                <a class="collapse-item" href="cards.html">Alumni</a>
             </div>
         </div>
     </li>

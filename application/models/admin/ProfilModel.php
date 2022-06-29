@@ -36,4 +36,14 @@ class ProfilModel extends CI_Model
         $this->db->where('id', $id);
         return $this->db->get("tb_profile")->result();
     }
+
+    public function count()
+    {
+        $query = $this->db->get("tb_profile");
+        if ($query->num_rows() > 0) {
+            return $query->num_rows();
+        } else {
+            return 0;
+        }
+    }
 }

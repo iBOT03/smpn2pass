@@ -23,7 +23,6 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Tambah Data Sekolah</h1>
 
@@ -98,7 +97,7 @@
                                     <div class="col-sm-4">
                                         <p>Foto Lama</p>
                                         <div class="input-group">
-                                            <img src="<?= base_url('./uploads/foto_sekolah/') . $info[0]->foto ?>" alt="img" width="320">
+                                            <img src="<?= base_url('./uploads/foto_sekolah/') . $info[0]->foto ?>" alt="img" width="320px">
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
@@ -113,6 +112,7 @@
                                     <div class="col-sm-6">
                                         <div class="input-group">
                                             <input name="created_at" id="created_at" type="hidden" class="form-control border-dark small mb-3" placeholder="Masukkan Password" aria-describedby="basic-addon2" value="<?= $info[0]->created_at ?>" hidden>
+                                            <input name="id" id="id" type="hidden" class="form-control border-dark small mb-3" placeholder="Masukkan Password" aria-describedby="basic-addon2" value="<?= $info[0]->id ?>" hidden>
                                         </div>
                                         <?= form_error('created_at', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
