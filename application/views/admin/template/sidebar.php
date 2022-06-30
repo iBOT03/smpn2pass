@@ -67,8 +67,8 @@
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+    <li class="nav-item <?= ($this->uri->segment(2) == 'Jabatan' ? 'active' : '') ?>">
+        <a class="nav-link" href="<?= base_url('admin/Jabatan') ?>">
             <i class="fas fa-fw fa-chart-line"></i>
             <span>Jabatan PTK</span></a>
     </li>

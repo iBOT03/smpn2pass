@@ -25,44 +25,28 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Tambah Data Alumni</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Tambah Jabatan</h1>
 
-                    <form method="post" action="<?= site_url('admin/Alumni/tambah') ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?= site_url('admin/Jabatan/tambah') ?>" enctype="multipart/form-data">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-12">
                                         <p>Nama Lengkap</p>
                                         <div class="input-group">
-                                            <input name="nama" id="nama" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan nama alumni ..." aria-describedby="basic-addon2" value="<?= set_value('nama'); ?>">
+                                            <input name="jabatan" id="jabatan" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan jabatan ..." aria-describedby="basic-addon2" value="<?= set_value('jabatan'); ?>">
                                         </div>
-                                        <?= form_error('nama', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <p>Tahun Lulus</p>
-                                        <div class="input-group">
-                                            <Select class="form-control border-dark small mb-3" id="tahun" name="tahun" aria-describedby="basic-addon2">
-                                                <option selected>--- Pilih ---</option>
-                                                <?php
-                                                $mulai = date('Y') - 5;
-                                                for ($i = $mulai; $i < $mulai + 10; $i++) {
-                                                    $sel = $i == date('Y') ? ' selected="selected"' : '';
-                                                    echo '<option value="' . $i . '"' . $sel . '>' . $i . '</option>';
-                                                }
-                                                ?>
-                                            </Select>
-                                        </div>
-                                        <?= form_error('tahun', '<small class="text-danger pl-2">', '</small>'); ?>
+                                        <?= form_error('jabatan', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                 </div>
 
-                                <button type="submit" href="<?= site_url('admin/Alumni') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
+                                <button type="submit" href="<?= site_url('admin/Jabatan') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                     </span>
                                     <span class="text">Tambah Data</span>
                                 </button>
-                                <a href="<?= site_url('admin/Alumni') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
+                                <a href="<?= site_url('admin/Jabatan') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>
