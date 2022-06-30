@@ -106,7 +106,7 @@ class Ptk extends CI_Controller
         $delete = $this->PtkModel->delete($id);
         if ($delete) {
             $this->session->set_flashdata(
-                'pesan',
+                'success_msg',
                 '<div class="alert alert-success alert-dismissible fade show" role="alert">
 					<span class="alert-icon"><i class="ni ni-check-bold"></i></span>
 					<span class="alert-text"><strong>Selamat,</strong> data berhasil dihapus !</span>
@@ -118,7 +118,7 @@ class Ptk extends CI_Controller
             redirect('admin/Ptk');
         } else {
             $this->session->set_flashdata(
-                'pesan',
+                'error_msg',
                 '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 					<span class="alert-icon"><i class="ni ni-check-bold"></i></span>
 					<span class="alert-text"><strong>Maaf,</strong> data gagal dihapus !</span>

@@ -45,8 +45,8 @@
                 <a class="collapse-item <?= ($this->uri->segment(2) == 'Admin' ? 'active' : '') ?>" href="<?= base_url('admin/Admin') ?>">Admin</a>
                 <a class="collapse-item <?= ($this->uri->segment(2) == 'Ptk' ? 'active' : '') ?>" href="<?= base_url('admin/Ptk') ?>">PTK</a>
                 <h6 class="collapse-header">Civitas Siswa & Alumni :</h6>
-                <a class="collapse-item" href="buttons.html">Siswa</a>
-                <a class="collapse-item" href="cards.html">Alumni</a>
+                <a class="collapse-item <?= ($this->uri->segment(2) == 'Siswa' ? 'active' : '') ?>" href="<?= base_url('admin/Siswa') ?>">Siswa</a>
+                <a class="collapse-item <?= ($this->uri->segment(2) == 'Alumni' ? 'active' : '') ?>" href="<?= base_url('admin/Alumni') ?>">Alumni</a>
             </div>
         </div>
     </li>
