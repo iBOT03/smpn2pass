@@ -60,8 +60,8 @@
     </div>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+    <li class="nav-item <?= ($this->uri->segment(2) == 'Berita' ? 'active' : '') ?>">
+        <a class="nav-link" href="<?= base_url('admin/Berita') ?>">
             <i class="fas fa-fw fa-table"></i>
             <span>Berita</span></a>
     </li>

@@ -1,15 +1,14 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Ptk extends CI_Controller
+class Berita extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
         $this->load->library('form_validation');
-        $this->load->model('admin/PtkModel');
+        $this->load->model('admin/BeritaModel');
         $this->load->library('upload');
-        error_reporting(0);
         // cek_session();
     }
 
@@ -27,41 +26,41 @@ class Ptk extends CI_Controller
             $this->session->unset_userdata('error_msg');
         }
 
-        $data['info']  = $this->PtkModel->Rel();
-        $data['count'] = $this->PtkModel->count();
-        $this->load->view('admin/civitas/ptk/ptk', $data);
+        $data['info']  = $this->BeritaModel->Rel();
+        $data['count'] = $this->BeritaModel->count();
+        $this->load->view('admin/berita/berita', $data);
     }
 
     public function tambah()
     {
-        $this->form_validation->set_rules('nama', 'Nama Pengajar/Tenaga kerja', 'required|trim|max_length[50]');
-        $this->form_validation->set_rules('nip', 'Nip', 'required|trim|max_length[30]|is_unique[tb_ptk.nip]');
-        $this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
-        $this->form_validation->set_rules('foto', 'Foto Sekolah', 'trim');
+        $this->form_validation->set_rules('judul', 'Judul Berita', 'required|trim|max_length[50]');
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
+        $this->form_validation->set_rules('foto', 'Foto Berita', 'trim');
+        $this->form_validation->set_rules('link', 'Tautan pendukung');
 
         if ($this->form_validation->run() == false) {
-            $data['jabatan'] = $this->PtkModel->getJabatan();
-            $this->load->view('admin/civitas/ptk/tambah', $data);
+            $this->load->view('admin/berita/tambah');
         } else {
             $config['allowed_types'] = 'jpg|png|jpeg';
             $config['max_size'] = '2048';
             $config['quality'] = '75%';
-            $config['upload_path'] = './uploads/ptk/';
+            $config['upload_path'] = './uploads/berita/';
 
             $this->upload->initialize($config);
 
             if ($this->upload->do_upload('foto')) {
                 $foto = $this->upload->data('file_name');
                 $dataPost = array(
-                    'id'            => '',
-                    'nama'            => $this->input->post('nama'),
-                    'nip'            => $this->input->post('nip'),
-                    'jabatan_id'    => $this->input->post('jabatan'),
-                    'foto'            => trim($foto),
+                    'id_berita'     => '',
+                    'judul'         => $this->input->post('judul'),
+                    'deskripsi'     => $this->input->post('deskripsi'),
+                    'link'          => $this->input->post('link'),
+                    'foto'          => trim($foto),
+                    'upload_by'     => $this->session->userdata('id'),
                     'created_at'    => date('Y-m-d H:i:s'),
-                    'updated_at'    => date('Y-m-d H:i:s')
+                    'update_at'    => date('Y-m-d H:i:s')
                 );
-                if ($this->PtkModel->create($dataPost)) {
+                if ($this->BeritaModel->create($dataPost)) {
                     $this->session->set_flashdata(
                         'success_msg',
                         '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -72,7 +71,7 @@ class Ptk extends CI_Controller
 							</button>
 						</div>'
                     );
-                    redirect('admin/Ptk');
+                    redirect('admin/Berita');
                 } else {
                     $this->session->set_flashdata(
                         'error_msg',
@@ -84,7 +83,7 @@ class Ptk extends CI_Controller
 							</button>
 						</div>'
                     );
-                    redirect('admin/Ptk');
+                    redirect('admin/Berita');
                 }
             } else {
                 $this->session->set_flashdata(
@@ -96,14 +95,14 @@ class Ptk extends CI_Controller
 						</button>
 					</div>'
                 );
-                redirect('admin/Ptk');
+                redirect('admin/Berita');
             }
         }
     }
 
     public function delete($id)
     {
-        $delete = $this->PtkModel->delete($id);
+        $delete = $this->BeritaModel->delete($id);
         if ($delete) {
             $this->session->set_flashdata(
                 'success_msg',
@@ -115,7 +114,7 @@ class Ptk extends CI_Controller
 					</button>
 				</div>'
             );
-            redirect('admin/Ptk');
+            redirect('admin/Berita');
         } else {
             $this->session->set_flashdata(
                 'error_msg',
@@ -127,53 +126,52 @@ class Ptk extends CI_Controller
 					</button>
 				</div>'
             );
-            redirect('admin/Ptk');
+            redirect('admin/Berita');
         }
     }
 
     public function update($id = null)
     {
-        $this->form_validation->set_rules('nama', 'Nama Pengajar/Tenaga kerja', 'required|trim|max_length[50]');
-        $this->form_validation->set_rules('nip', 'Nip', 'required|trim|max_length[30]');
-        $this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
-        $this->form_validation->set_rules('foto', 'Foto Sekolah', 'trim');
+        $this->form_validation->set_rules('judul', 'Judul Berita', 'required|trim|max_length[50]');
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required|trim');
+        $this->form_validation->set_rules('foto', 'Foto Berita', 'trim');
+        $this->form_validation->set_rules('link', 'Tautan pendukung');
 
         if ($this->form_validation->run() == false) {
-            $data["bagian"]     = $this->PtkModel->detail($id);
-            $data["row"]     = $this->PtkModel->getJab($id);
-            $data["data"]     = $this->PtkModel->getDetail($id);
-            $data['user']	 = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
-            $this->load->view('admin/civitas/ptk/edit', $data);
+            $data['info']     = $this->BeritaModel->detail($id);
+            $data['user']     = $this->db->get_where('tb_user', ['email' => $this->session->userdata('email')])->row_array();
+            $this->load->view('admin/berita/edit', $data);
         } else {
-            $update = $this->PtkModel->update(array(
-                'id'            => $this->input->post('id'),
-                'nama'          => $this->input->post('nama'),
-                'nip'           => $this->input->post('nip'),
-                'jabatan_id'    => $this->input->post('jabatan'),
+            $update = $this->BeritaModel->update(array(
+                'id_berita'     => $this->input->post('id'),
+                'judul'         => $this->input->post('judul'),
+                'deskripsi'     => $this->input->post('deskripsi'),
+                'link'          => $this->input->post('link'),
+                'upload_by'     => $this->session->userdata('id'),
                 'created_at'    => $this->input->post('created_at'),
-                'updated_at'    => date('Y-m-d H:i:s')
+                'update_at'    => date('Y-m-d H:i:s')
             ), $id);
 
             if ($update) {
                 $ubahfoto = $_FILES['foto']['name'];
                 if ($ubahfoto) {
                     $config['allowed_types'] = 'jpg|jpeg|png';
-                    $config['max_size']         = '2048';
-                    $config['upload_path']      = './uploads/ptk/';
-                    $config['file_name']      = $ubahfoto;
+                    $config['max_size']      = '2048';
+                    $config['upload_path']   = './uploads/berita/';
+                    $config['file_name']     = $ubahfoto;
 
                     $this->upload->initialize($config);
 
                     if ($this->upload->do_upload('foto')) {
-                        $user = $this->db->get_where('tb_ptk', ['id' => $id])->row_array();
+                        $user = $this->db->get_where('tb_berita', ['id_berita' => $id])->row_array();
                         $fotolama = $user['foto'];
                         if ($fotolama) {
-                            unlink(FCPATH . './uploads/ptk/' . $fotolama);
+                            unlink(FCPATH . './uploads/berita/' . $fotolama);
                         }
                         $fotobaru = $this->upload->data('file_name');
                         $this->db->set('foto', $fotobaru);
-                        $this->db->where('id', $id);
-                        $this->db->update('tb_ptk');
+                        $this->db->where('id_berita', $id);
+                        $this->db->update('tb_berita');
                     } else {
                         $this->session->set_flashdata(
                             'error_msg',
@@ -185,7 +183,7 @@ class Ptk extends CI_Controller
 								</button>
 							</div>'
                         );
-                        redirect('admin/Ptk');
+                        redirect('admin/Berita');
                     }
                 }
                 $this->session->set_flashdata(
@@ -198,7 +196,7 @@ class Ptk extends CI_Controller
 						</button>
 					</div>'
                 );
-                redirect('admin/Ptk');
+                redirect('admin/Berita');
             } else {
                 $this->session->set_flashdata(
                     'error_msg',
@@ -210,7 +208,7 @@ class Ptk extends CI_Controller
 						</button>
 					</div>'
                 );
-                redirect('admin/Ptk');
+                redirect('admin/Berita');
             }
         }
     }
