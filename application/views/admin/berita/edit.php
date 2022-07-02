@@ -27,7 +27,7 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Edit Berita</h1>
 
-                    <form method="post" action="<?= site_url('admin/Berita/update/' . $info[0]->id) ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?= site_url('admin/Berita/update/' . $info[0]->id_berita) ?>" enctype="multipart/form-data">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <div class="row">
@@ -78,7 +78,7 @@
                                     </div>
                                 </div><br>
 
-                                <input name="id" id="id" type="hidden" aria-describedby="basic-addon2" value="<?= $info[0]->id; ?>">
+                                <input name="id" id="id" type="hidden" aria-describedby="basic-addon2" value="<?= $info[0]->id_berita; ?>">
                                 <input name="created_at" id="created_at" type="hidden"  aria-describedby="basic-addon2" value="<?= $info[0]->created_at; ?>">
 
                                 <button type="submit" href="<?= site_url('admin/Berita') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">

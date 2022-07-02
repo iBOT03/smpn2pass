@@ -13,6 +13,21 @@ class SiswaModel extends CI_Model
     {
         return $this->db->get('tb_siswa')->result();
     }
+    
+    public function kelas7()
+    {
+        return $this->db->query("SELECT * FROM tb_siswa WHERE kelas = '7'")->result();
+    }
+    
+    public function kelas8()
+    {
+        return $this->db->query("SELECT * FROM tb_siswa WHERE kelas = '8'")->result();
+    }
+    
+    public function kelas9()
+    {
+        return $this->db->query("SELECT * FROM tb_siswa WHERE kelas = '9'")->result();
+    }
 
     public function create($data = array())
     {

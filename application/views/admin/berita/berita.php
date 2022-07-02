@@ -77,7 +77,7 @@
                                                 <td><?= $no ?></td>
                                                 <td><img src="<?= base_url('./uploads/berita/' . $row->foto) ?>" alt="Img" width="100px"></td>
                                                 <td><?= substr($row->judul, 0, 30) . '...' ?></td>
-                                                <td><?= substr($row->deskripsi, 0, 100) . '...' ?></td>
+                                                <td><?= substr($row->deskripsi, 0, 50) . '...' ?></td>
                                                 <td><?= $row->username ?></td>
                                                 <td><a href="<?= $row->link ?>" target="_blank" rel="noopener noreferrer">Klik disini</a></td>
                                                 <td><?= $row->created_at ?></td>

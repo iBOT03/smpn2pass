@@ -21,40 +21,7 @@
     </section>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="d-flex align-items-center">
-        <div class="container d-flex align-items-center justify-content-between">
-
-            <h1 class="logo"><a href="index.html">BizLand<span>.</span></a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
-
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto" href="<?= base_url('') ?>#hero">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="<?= base_url('') ?>#about">Profil</a></li>
-                    <li class="dropdown"><a href="#"><span>Siswa</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li class="dropdown"><a href="#"><span>Siswa</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Kelas 7</a></li>
-                                    <li><a href="#">Kelas 8</a></li>
-                                    <li><a href="#">Kelas 9</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Alumni</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link scrollto" href="<?= base_url('') ?>#services">Service</a></li>
-                    <li><a class="nav-link scrollto active" href="<?= base_url('Berita') ?>">Berita</a></li>
-                    <!-- <li><a class="nav-link scrollto" href="#team">PTK</a></li> -->
-                    <li><a class="nav-link scrollto" href="<?= base_url('Ptk') ?>">PTK</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-
-        </div>
-    </header>
+    <?php $this->load->view('template/topbar'); ?>
     <!-- End Header -->
 
     <main id="main" data-aos="fade-up">
@@ -64,11 +31,11 @@
             <div class="container">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>Portfolio Details</h2>
+                    <h2>Detail Berita</h2>
                     <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li>Portfolio Details</li>
+                        <li><a href="<?= base_url('') ?>">Beranda</a></li>
+                        <li><a href="<?= base_url('Berita') ?>">Berita</a></li>
+                        <li>Detail Berita</li>
                     </ol>
                 </div>
 
@@ -85,17 +52,17 @@
                         <div class="portfolio-details-slider swiper">
                             <div class="swiper-wrapper align-items-center">
 
-                                <div class="swiper-slide">
-                                    <img src="<?= base_url('assets/user/') ?>img/portfolio/portfolio-details-1.jpg" alt="">
-                                </div>
+                                <!-- <div class="swiper-slide"> -->
+                                <img src="<?= base_url('./uploads/berita/' . $info[0]->foto) ?>" alt="">
+                                <!-- </div> -->
 
-                                <div class="swiper-slide">
+                                <!-- <div class="swiper-slide">
                                     <img src="<?= base_url('assets/user/') ?>img/portfolio/portfolio-details-2.jpg" alt="">
                                 </div>
 
                                 <div class="swiper-slide">
                                     <img src="<?= base_url('assets/user/') ?>img/portfolio/portfolio-details-3.jpg" alt="">
-                                </div>
+                                </div> -->
 
                             </div>
                             <div class="swiper-pagination"></div>
@@ -104,18 +71,17 @@
 
                     <div class="col-lg-4">
                         <div class="portfolio-info">
-                            <h3>Project information</h3>
+                            <h3>Detail Berita</h3>
                             <ul>
-                                <li><strong>Category</strong>: Web design</li>
-                                <li><strong>Client</strong>: ASU Company</li>
-                                <li><strong>Project date</strong>: 01 March, 2020</li>
-                                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                                <li><strong>Diperbaharui pada</strong>: <?= date('d F Y', strtotime($info[0]->update_at)) ?></li>
+                                <li><strong>Tautan</strong>: <a href="#"><?= $info[0]->link; ?></a></li>
+                                <li><strong>Uploaded by</strong>: <?= $info[0]->username; ?></li>
                             </ul>
                         </div>
                         <div class="portfolio-description">
-                            <h2>This is an example of portfolio detail</h2>
+                            <h2><?= $info[0]->judul; ?></h2>
                             <p>
-                                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                                <?= $info[0]->deskripsi; ?>
                             </p>
                         </div>
                     </div>

@@ -35,7 +35,7 @@ class Ptk extends CI_Controller
     public function tambah()
     {
         $this->form_validation->set_rules('nama', 'Nama Pengajar/Tenaga kerja', 'required|trim|max_length[50]');
-        $this->form_validation->set_rules('nip', 'Nip', 'required|trim|max_length[30]|is_unique[tb_ptk.nip]');
+        $this->form_validation->set_rules('nip', 'Nip', 'required|trim|max_length[30]');
         $this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
         $this->form_validation->set_rules('foto', 'Foto Sekolah', 'trim');
 

@@ -34,7 +34,7 @@
                     <!-- <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p> -->
                 </div>
 
-                <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <!-- <div class="row" data-aos="fade-up" data-aos-delay="100">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All</li>
@@ -43,21 +43,23 @@
                             <li data-filter=".filter-web">Web</li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
+                    <?php foreach ($info as $row) : ?>
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="<?= base_url('') ?>assets/user/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                        <img src="<?= base_url('./uploads/berita/' . $row->foto) ?>" class="img-fluid" alt="">
                         <div class="portfolio-info">
-                            <h4>App 1</h4>
-                            <p>App</p>
-                            <a href="<?= base_url('') ?>assets/user/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                            <a href="<?= base_url('Berita/detail') ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                            <h4><?= substr($row->judul, 0, 20) . '...' ?></h4>
+                            <p><?= substr($row->deskripsi, 0, 30) . '...' ?></p>
+                            <a href="<?= base_url('./uploads/berita/' . $row->foto) ?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="<?= $row->judul ?>"><i class="bx bx-plus"></i></a>
+                            <a href="<?= site_url('Berita/detail/' . $row->id_berita) ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
+                    <?php endforeach; ?>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                         <img src="<?= base_url('') ?>assets/user/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
                         <div class="portfolio-info">
                             <h4>Web 3</h4>
@@ -135,7 +137,7 @@
                             <a href="<?= base_url('') ?>assets/user/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
                             <a href="<?= base_url('Berita/detail') ?>" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 

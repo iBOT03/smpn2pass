@@ -9,19 +9,19 @@
             <ul>
                 <li><a class="nav-link scrollto <?= ($this->uri->segment(1) == 'Beranda' ? 'active' : '') ?>" href="<?= base_url('') ?>#hero">Beranda</a></li>
                 <li><a class="nav-link scrollto" href="<?= base_url('') ?>#about">Profil</a></li>
-                <li class="dropdown"><a href="<?= base_url('') ?>"><span>Siswa</span> <i class="bi bi-chevron-down"></i></a>
+                <li class="dropdown"><a href="#"><span>Civitas</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>                        
-                        <li class="dropdown"><a href="<?= base_url('') ?>"><span>Siswa</span> <i class="bi bi-chevron-right"></i></a>
+                        <li class="dropdown"><a href="#"><span>Siswa</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="<?= base_url('') ?>">Kelas 7</a></li>
-                                <li><a href="<?= base_url('') ?>">Kelas 8</a></li>
-                                <li><a href="<?= base_url('') ?>">Kelas 9</a></li>
+                                <li><a href="<?= base_url('Civitas') ?>">Kelas 7</a></li>
+                                <li><a href="<?= base_url('Civitas/kelas8') ?>">Kelas 8</a></li>
+                                <li><a href="<?= base_url('Civitas/kelas9') ?>">Kelas 9</a></li>
                             </ul>
                         </li>
-                        <li><a href="<?= base_url('') ?>">Alumni</a></li>
+                        <li><a href="<?= base_url('Civitas/alumni') ?>">Alumni</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="<?= base_url('') ?>#services">Service</a></li>
+                <li><a class="nav-link scrollto" href="<?= base_url('') ?>#services">Ekstrakurikuler</a></li>
                 <li><a class="nav-link scrollto <?= ($this->uri->segment(1) == 'Berita' ? 'active' : '') ?>" href="<?= base_url('Berita') ?>">Berita</a></li>
                 <!-- <li><a class="nav-link scrollto" href="#team">PTK</a></li> -->
                 <li><a class="nav-link scrollto <?= ($this->uri->segment(1) == 'Ptk' ? 'active' : '') ?>" href="<?= base_url('Ptk') ?>">PTK</a></li>

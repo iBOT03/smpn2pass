@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>SMPN 2 PASONGSONGAN</title>
+    <title><?= SITE_NAME ?></title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -26,5 +26,14 @@
 
     <!-- Template Main CSS File -->
     <link href="<?= base_url('') ?>assets/user/css/style.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this page -->
+    <!-- <link href="<?= base_url('') ?>assets/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css"> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
 
 </head>

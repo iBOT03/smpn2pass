@@ -46,4 +46,44 @@ class ProfilModel extends CI_Model
             return 0;
         }
     }
+    
+    public function alumni()
+    {
+        $query = $this->db->get("tb_alumni");
+        if ($query->num_rows() > 0) {
+            return $query->num_rows();
+        } else {
+            return 0;
+        }
+    }
+
+    public function siswa()
+    {
+        $query = $this->db->get("tb_siswa");
+        if ($query->num_rows() > 0) {
+            return $query->num_rows();
+        } else {
+            return 0;
+        }
+    }
+
+    public function ptk()
+    {
+        $query = $this->db->get("tb_ptk");
+        if ($query->num_rows() > 0) {
+            return $query->num_rows();
+        } else {
+            return 0;
+        }
+    }
+
+    public function feedback()
+    {
+        $query = $this->db->get("tb_pesan");
+        if ($query->num_rows() > 0) {
+            return $query->num_rows();
+        } else {
+            return 0;
+        }
+    }
 }
